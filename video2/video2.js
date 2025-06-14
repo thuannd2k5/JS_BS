@@ -1,27 +1,18 @@
-
 console.log("Hello world from HTML")
 
-let sum = (a, b, callback) => {
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-    let tong = a + b;
-    setTimeout(() => {
-        callback(tong);
-    }, 5000)
-    let i = 0;
-    let timer = setInterval(() => {
-        callback(tong);
-        i++;
-        if (i === 5) {
-            clearInterval(timer);
-        }
-    }, 1000);
-    console.log(">>>> :", i);
+let arr = [
+    { name: 'thuan', age: 19 },
+    { name: 'tuan', age: 20 },
+    { name: 'thanh', age: 20 },
+    { name: 'minh', age: 20 }
+]
 
+let filter = arr.filter((item, index) => {
+    // console.log(">>> check filter : item : ", item, "index : ", index);
+    return item && item.age === 20;
+});
 
-}
+console.log(filter);
 
-let printSum = (message) => {
-    console.log("The sum is: " + message);
-}
-
-sum(6, 9, printSum)
